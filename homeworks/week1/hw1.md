@@ -10,3 +10,9 @@
 1. 自我檢討
 1. 發 PR，並複製其網址
 1. 至學習平台貼上該網址，繳交作業
+
+等作業改完並且 merge 以後：
+
+1. 切換到 master - git checkout master
+1. 把最新的改動拉下來 - git pull origin master
+1. 刪除已經 merge 的 branch - git branch -d hw1
