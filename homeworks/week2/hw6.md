@@ -1,9 +1,9 @@
 ``` js
 function isValid(arr) {
-  for(var i=0; i<arr.length; i++) {
+  for(var i = 0; i < arr.length; i++) {
     if (arr[i] <= 0) return 'invalid'
   }
-  for(var i=2; i<arr.length; i++) {
+  for(var i = 2; i < arr.length; i++) {
     if (arr[i] !== arr[i-1] + arr[i-2]) return 'invalid'
   }
   return 'valid'
