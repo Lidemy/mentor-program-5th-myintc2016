@@ -22,6 +22,8 @@ switch (action) {
   case 'update':
     UpdBook()
     break
+  default:
+    console.log('可執行動作：list / read / delete / create /update')
 }
 
 function ListBook() {
