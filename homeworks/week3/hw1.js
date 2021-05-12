@@ -1,4 +1,3 @@
-/* eslint-disable eol-last */
 const readline = require('readline')
 
 const lines = []

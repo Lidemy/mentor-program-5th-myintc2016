@@ -1,4 +1,5 @@
-/* eslint-disable eol-last */
+/* eslint no-const-assign: "error" */
+/* eslint-env es6 */
 const readline = require('readline')
 
 const lines = []
@@ -26,17 +27,13 @@ function solve(lines) {
 }
 
 function isNarcissistic(i) {
-  // eslint-disable-next-line
-  const y = i
+  let key = i
   const digs = i.toString().length // 判斷幾位數
-  // eslint-disable-next-line
-  const sum = 0
-  while (y !== 0) {
-    const num = y % 10
-    // eslint-disable-next-line
+  let sum = 0
+  while (key !== 0) {
+    const num = key % 10
     sum += num ** digs
-    // eslint-disable-next-line
-    y = Math.floor(y / 10)
+    key = Math.floor(key / 10)
   }
   return sum === i
 }
