@@ -6,14 +6,12 @@ request(`${baseURL}`, (err, res, body) => {
   if (err) {
     return console.log('抓取失敗', err)
   }
-  let data
   try {
-    data = JSON.parse(body)
+    const data = JSON.parse(body)
+    for (let i = 0; i < data.length; i++) {
+      console.log(`${data[i].id} ${data[i].name}`)
+    }
   } catch (err) {
-    console.log(err)
-    return
-  }
-  for (let i = 0; i < data.length; i++) {
-    console.log(`${data[i].id} ${data[i].name}`)
+    return console.log(err)
   }
 })
