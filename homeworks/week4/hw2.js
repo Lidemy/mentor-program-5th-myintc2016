@@ -8,25 +8,25 @@ const params2 = arge[4] // 參數 2
 
 switch (action) {
   case 'list':
-    ListBook()
+    listBook()
     break
   case 'read':
-    GetBook()
+    getBook()
     break
   case 'delete':
-    DelBook()
+    deleteBook()
     break
   case 'create':
-    CreBook()
+    createBook()
     break
   case 'update':
-    UpdBook()
+    updateBook()
     break
   default:
     console.log('可執行動作：list / read / delete / create /update')
 }
 
-function ListBook() {
+function listBook() {
   request(`${baseURL}?_limit=20`, (err, res, body) => {
     if (err) {
       return console.log('抓取失敗', err)
@@ -39,7 +39,7 @@ function ListBook() {
   })
 }
 
-function GetBook() {
+function getBook() {
   request(`${baseURL}/${params}`, (err, res, body) => {
     if (err) {
       return console.log('抓取失敗', err)
@@ -49,7 +49,7 @@ function GetBook() {
   })
 }
 
-function DelBook() {
+function deleteBook() {
   request(`${baseURL}/${params}`, (err, res, body) => {
     if (err) {
       return console.log('刪除失敗', err)
@@ -59,7 +59,7 @@ function DelBook() {
   })
 }
 
-function CreBook() {
+function createBook() {
   request.post(
     {
       url: `${baseURL}`,
@@ -76,7 +76,7 @@ function CreBook() {
   )
 }
 
-function UpdBook() {
+function updateBook() {
   request(
     {
       method: 'PATCH',
