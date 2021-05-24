@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>餐廳官網</title>
+    <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* line 8, ../sass/style.scss */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        /* line 12, ../sass/style.scss */
+        body {
+            font-family: "Questrial", "Noto Sans TC", STHeiti, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.4;
+            letter-spacing: 0.085rem;
+            color: #000;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 576px) {
+
+            /* line 12, ../sass/style.scss */
+            body {
+                font-size: 15px;
+            }
+        }
+
+        /* line 25, ../sass/style.scss */
+        a {
+            color: #000;
+            text-decoration: none;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+
+        /* line 29, ../sass/style.scss */
+        a:hover,
+        a:active,
+        a:focus {
+            opacity: 0.85;
+            outline: none;
+        }
+
+        /* line 35, ../sass/style.scss */
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* line 39, ../sass/style.scss */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #000;
+            font-family: "Questrial", "Noto Sans TC", STHeiti, sans-serif;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* line 47, ../sass/style.scss */
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: "Questrial", "Noto Sans TC", STHeiti, sans-serif;
+        }
+
+        /* line 51, ../sass/style.scss */
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        /* line 57, ../sass/style.scss */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* line 62, ../sass/style.scss */
+        ::-webkit-selection {
+            color: white;
+            background: #489846;
+        }
+
+        /* line 67, ../sass/style.scss */
+        ::-moz-selection {
+            color: white;
+            background: #489846;
+        }
+
+        /* line 72, ../sass/style.scss */
+        ::selection {
+            color: white;
+            background: #489846;
+        }
+
+        /* line 77, ../sass/style.scss */
+        .container {
+            position: relative;
+            width: 100%;
+            padding: 0 16px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 1360px;
+            }
+        }
+
+        @media (min-width: 1960px) {
+
+            /* line 77, ../sass/style.scss */
+            .container {
+                max-width: 1730px;
+            }
+        }
+
+        /* line 103, ../sass/style.scss */
+        .flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        /* line 108, ../sass/style.scss */
+        .text-center {
+            text-align: center;
+        }
+
+        /* line 112, ../sass/style.scss */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 26px 0 32px;
+            background-color: white;
+            z-index: 99;
+        }
+
+        /* line 118, ../sass/style.scss */
+        #header .logo,
+        #header .menu {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* line 123, ../sass/style.scss */
+        #header .logo h1 {
+            color: #489846;
+        }
+
+        /* line 128, ../sass/style.scss */
+        #header .menu li {
+            display: inline-block;
+            padding: 0 18px;
+        }
+
+        /* line 132, ../sass/style.scss */
+        #header .menu li:not(.label)>a:hover {
+            color: #489846;
+        }
+
+        /* line 136, ../sass/style.scss */
+        #header .menu li.label {
+            padding: 0;
+        }
+
+        /* line 138, ../sass/style.scss */
+        #header .menu li.label a {
+            padding: 13px 25px;
+            background-color: #ff7286;
+            border-radius: 8px;
+            color: white;
+        }
+
+        /* line 143, ../sass/style.scss */
+        #header .menu li.label a:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 991px) {
+            #header .flex {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            /* line 156, ../sass/style.scss */
+            #header .logo {
+                width: 30%;
+            }
+            #header .logo h1 {
+                margin-bottom: 0;
+            }
+            /* line 159, ../sass/style.scss */
+            #header .menu {
+                width: 70%;
+                text-align: right;
+                margin-right: -36px;
+            }
+
+            /* line 163, ../sass/style.scss */
+            #header .menu li {
+                padding: 0 36px;
+            }
+        }
+
+        /* line 171, ../sass/style.scss */
+        #footer {
+            position: relative;
+            color: #484848;
+            background-color: #e8efee;
+        }
+
+        /* line 175, ../sass/style.scss */
+        #footer .flex {
+            padding: 35px 0 39px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 767px) {
+
+            /* line 175, ../sass/style.scss */
+            #footer .flex {
+                flex-direction: column;
+            }
+        }
+
+        /* line 182, ../sass/style.scss */
+        #footer ul {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* line 185, ../sass/style.scss */
+        #footer ul h5 {
+            margin-bottom: 3px;
+            font-family: Questrial;
+            font-size: 36px;
+            color: #489846;
+        }
+
+        @media (max-width: 767px) {
+
+            /* line 185, ../sass/style.scss */
+            #footer ul h5 {
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+        }
+
+        /* line 196, ../sass/style.scss */
+        #footer ul li:not(:last-of-type) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 182, ../sass/style.scss */
+            #footer ul {
+                flex: 0 0 auto;
+            }
+
+            /* line 202, ../sass/style.scss */
+            #footer ul:first-of-type {
+                width: 60%;
+                text-align: left;
+            }
+
+            /* line 205, ../sass/style.scss */
+            #footer ul:last-of-type {
+                width: 40%;
+                text-align: right;
+            }
+        }
+
+        /* line 211, ../sass/style.scss */
+        #footer .copyright {
+            padding: 15px 0;
+            color: white;
+            background-color: #35564b;
+            text-align: center;
+        }
+
+        /* line 2, ../sass/index.scss */
+        #body {
+            margin-top: 130px;
+        }
+
+        @media (min-width: 992px) {
+
+            /* line 2, ../sass/index.scss */
+            #body {
+                margin-top: 91px;
+            }
+        }
+
+        /* line 7, ../sass/index.scss */
+        #body section {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        /* line 10, ../sass/index.scss */
+        #body section .title {
+            position: relative;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        @media (min-width: 576px) {
+
+            /* line 10, ../sass/index.scss */
+            #body section .title {
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 10, ../sass/index.scss */
+            #body section .title {
+                font-size: 36px;
+            }
+        }
+
+        /* line 21, ../sass/index.scss */
+        #body section .title span {
+            position: relative;
+        }
+
+        /* line 23, ../sass/index.scss */
+        #body section .title span:before {
+            position: absolute;
+            top: 0;
+            left: -31px;
+            content: '';
+            display: block;
+            width: 15px;
+            height: 100%;
+            background-color: #a3dea2;
+        }
+
+        /* line 35, ../sass/index.scss */
+        #body section:nth-of-type(1) {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            display: block;
+            height: 380px;
+            margin-bottom: 40px;
+        }
+
+        /* line 42, ../sass/index.scss */
+        #body section:nth-of-type(1) h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translate3d(-50%, -50%, 0);
+            -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+
+        @media (min-width: 992px) {
+
+            /* line 42, ../sass/index.scss */
+            #body section:nth-of-type(1) h2 {
+                font-size: 60px;
+            }
+        }
+
+        @media (min-width: 576px) {
+
+            /* line 35, ../sass/index.scss */
+            #body section:nth-of-type(1) {
+                height: 480px;
+            }
+
+            /* line 56, ../sass/index.scss */
+            #body section:nth-of-type(1) h2 {
+                font-size: 48px;
+            }
+        }
+
+        /* line 62, ../sass/index.scss */
+        #body section:nth-of-type(2) .title {
+            margin-bottom: 39px;
+        }
+
+        /* line 65, ../sass/index.scss */
+        #body section:nth-of-type(2) p {
+            line-height: 2.4;
+        }
+
+        /* line 68, ../sass/index.scss */
+        #body section:nth-of-type(2) ul {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            margin: 60px 0 41px;
+        }
+
+        /* line 73, ../sass/index.scss */
+        #body section:nth-of-type(2) ul li {
+            display: inline-block;
+            width: 180px;
+            margin: 0 12px;
+            padding: 37px 30px;
+            border-radius: 10px;
+        }
+
+        /* line 79, ../sass/index.scss */
+        #body section:nth-of-type(2) ul li a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3e613d;
+            letter-spacing: 0.32px;
+        }
+
+        /* line 85, ../sass/index.scss */
+        #body section:nth-of-type(2) ul li:first-of-type {
+            background-color: #a8e8e1;
+        }
+
+        /* line 88, ../sass/index.scss */
+        #body section:nth-of-type(2) ul li:last-of-type {
+            background-color: #f9f9b5;
+        }
+
+        @media (min-width: 576px) {
+
+            /* line 73, ../sass/index.scss */
+            #body section:nth-of-type(2) ul li {
+                width: 220px;
+                padding: 61px 30px;
+            }
+
+            /* line 94, ../sass/index.scss */
+            #body section:nth-of-type(2) ul li a {
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 73, ../sass/index.scss */
+            #body section:nth-of-type(2) ul li {
+                width: 300px;
+            }
+
+            /* line 100, ../sass/index.scss */
+            #body section:nth-of-type(2) ul li a {
+                font-size: 36px;
+            }
+        }
+
+        /* line 108, ../sass/index.scss */
+        #body section:nth-of-type(3) .title {
+            margin-bottom: 36px;
+        }
+
+        /* line 111, ../sass/index.scss */
+        #body section:nth-of-type(3) ul {
+            position: relative;
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* line 115, ../sass/index.scss */
+        #body section:nth-of-type(3) ul li {
+            display: inline-block;
+            width: 100%;
+            float: left;
+        }
+
+        @media (min-width: 576px) {
+
+            /* line 115, ../sass/index.scss */
+            #body section:nth-of-type(3) ul li {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 115, ../sass/index.scss */
+            #body section:nth-of-type(3) ul li {
+                width: 25%;
+            }
+        }
+
+        /* line 125, ../sass/index.scss */
+        #body section:nth-of-type(3) ul li span {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            display: block;
+        }
+
+        /* line 130, ../sass/index.scss */
+        #body section:nth-of-type(3) ul li span:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        /* line 140, ../sass/index.scss */
+        #body section:nth-of-type(4) .title {
+            margin-bottom: 70px;
+        }
+
+        /* line 143, ../sass/index.scss */
+        #body section:nth-of-type(4) ul {
+            width: 100%;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        /* line 147, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li {
+            width: 100%;
+            float: left;
+        }
+
+        /* line 150, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li:nth-of-type(1),
+        #body section:nth-of-type(4) ul li:nth-of-type(2) {
+            margin-bottom: 70px;
+        }
+
+        @media (min-width: 768px) {
+
+            /* line 147, ../sass/index.scss */
+            #body section:nth-of-type(4) ul li {
+                width: calc(33.3333% - 11px);
+                float: left;
+                margin-bottom: 0;
+            }
+
+            /* line 157, ../sass/index.scss */
+            #body section:nth-of-type(4) ul li:nth-of-type(1) {
+                padding: 0 16px 0 0;
+            }
+
+            /* line 160, ../sass/index.scss */
+            #body section:nth-of-type(4) ul li:nth-of-type(2) {
+                padding: 0;
+            }
+
+            /* line 163, ../sass/index.scss */
+            #body section:nth-of-type(4) ul li:nth-of-type(3) {
+                padding: 0 0 0 16px;
+            }
+        }
+
+        /* line 167, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li .content {
+            position: relative;
+            padding: 93px 22px 39px;
+            border: 1px solid #c7e5ec;
+        }
+
+        /* line 171, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li .content p {
+            letter-spacing: 0.14px;
+            margin-bottom: 0;
+        }
+
+        /* line 175, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li .content .user {
+            position: absolute;
+            top: -52px;
+            left: 50%;
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        /* line 181, ../sass/index.scss */
+        #body section:nth-of-type(4) ul li .content .user .img {
+            position: relative;
+            display: block;
+            width: 105px;
+            height: 105px;
+            margin-bottom: 5px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            border: solid 1px #c1c1c1;
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="">
+            <div class="container">
+                <div class="flex">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>Just A Bite!</h1>
+                        </a>
+                    </div>
+                    <ul class="menu">
+                        <li class="label">
+                            <a href="#">
+                                <span>抽個大獎</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <span>我要點餐</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <span>查詢訂單</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <span>常見問題</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="body">
+        <section class="banner" style="background-image: url(https://source.unsplash.com/1600x900/?Pasta);">
+            <h2>咬一口廚房</h2>
+        </section>
+        <section>
+            <div class="container">
+                <h3 class="title"><span>當輕食之風盛起</span></h3>
+                <div class="content">
+                    <p class="text-center">由於現代人生活忙碌，常以外食為主，當高糖、高鹽、高油成為人們的日常，會導致慢性疾病與肥胖的機率大增。<br />
+                        我們定期走訪農田，選用最天然、營養的食材，以簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味。<br />
+                        咬一口不只賣餐點，我們希望能夠讓大家愛上料理的魅力，餐館特意打造全開放式廚房，烹調透明化，也不定時舉辦美食廚房DIY，讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感。
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">我要點餐</a>
+                        </li>
+                        <li>
+                            <a href="#">查詢訂單</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3 class="title"><span>Menu 搶先看</span></h3>
+            <ul>
+                <li>
+                    <span style="background-image: url(https://source.unsplash.com/900x900/?Bowl,Dish,Pasta);"></span>
+                </li>
+                <li>
+                    <span style="background-image: url(https://source.unsplash.com/900x900/?Bowl,Dish,Meal);"></span>
+                </li>
+                <li>
+                    <span style="background-image: url(https://source.unsplash.com/900x900/?Bowl,Dish,Pasta);"></span>
+                </li>
+                <li>
+                    <span style="background-image: url(https://source.unsplash.com/900x900/?Bowl,Dish,Meal);"></span>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="container">
+                <h3 class="title"><span>吃過都說好</span></h3>
+                <ul>
+                    <li>
+                        <div class="content">
+                            <div class="user">
+                                <span class="img"
+                                    style="background-image: url(https://source.unsplash.com/featured/?face);">
+                                </span>
+                                <span class="name">國父桑</span>
+                            </div>
+                            <p>我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <div class="user">
+                                <span class="img"
+                                    style="background-image: url(https://source.unsplash.com/featured/?duck);"></span>
+                                <span class="name">可達鴨</span>
+                            </div>
+                            <p>三雙鞋等於30，兩個人加一雙鞋等於20，一雙冰淇淋加一雙冰淇淋加一個人等於13，那$#%$#%^%$^##$%等於多少...唉，大概咬一口就知道了!!!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <div class="user">
+                                <span class="img"
+                                    style="background-image: url(https://source.unsplash.com/featured/?frog);"></span>
+                                <span class="name">旅かえる旅行青蛙</span>
+                            </div>
+                            <p>自從呱呱呱呱呱以後，我呱呱呱呱呱，非常感謝呱呱呱呱呱，下次呱呱呱呱呱我呱呱呱呱呱，一定呱呱呱呱呱!!!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h3 class="title"><span>我們在哪裡</span></h3>
+                <iframe width="100%" height="455" style="border:0;" allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28921.26360616787!2d121.5523430474663!3d25.028713224374513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da80a7ad%3A0xacc4d11dc963103c!2sTAIPEI%20101!5e0!3m2!1sen!2stw!4v1621863220052!5m2!1sen!2stw"></iframe>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="flex">
+                <ul>
+                    <li>餐館地址: 天上地下天堂路三分之一里六段520號</li>
+                    <li>訂位專線：02-1314-5566</li>
+                    <li>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</li>
+                    <li>email：service@justabite.com.tw</li>
+                </ul>
+                <ul>
+                    <li>
+                        <h5>Just A Bite!</h5>
+                    </li>
+                    <li>Facebook / Instagram / Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有</div>
+        </div>
+    </footer>
+</body>
+
+</html>

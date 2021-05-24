@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新拖延運動報名表單</title>
+    <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Questrial&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Questrial", "Noto Sans TC", STHeiti, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.4;
+            letter-spacing: 0.085rem;
+            color: #000;
+            margin: 0;
+        }
+
+        #form {
+            position: relative;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+            @media (min-width: 576px) {
+                #form {
+                    max-width: 540px;
+                }
+            }
+            @media (min-width: 768px) {
+                #form{
+                    max-width: 720px;
+                }
+            }
+            @media (min-width: 992px) {
+                #form {
+                    max-width: 960px;
+                }
+            }
+    </style>
+</head>
+
+<body style="padding: 20px 16px; background-color: #e0e0e0; margin: 0 auto;">
+    <div id="form" style="padding: 30px 20px; background-color: white; border-top: gold 3px solid;">
+        <h1>新拖延運動報名表單</h1>
+        <p style="font-size: 13px;">活動日期：2020/12/10 ~ 2020/12/11<br />活動地點：台北市大安區新生南路二段 1 號</p>
+        <p style="font-size: 14px; color: red;">* 必填</p>
+        <form style="margin-top: 30px;">
+            <div style="margin-bottom: 28px;">
+                <label style="display: block;">暱稱<span style="padding-left: 5px; color: red;">*</span></label>
+                <input type="text" placeholder="您的回答">
+            </div>
+            <div style="margin-bottom: 28px;">
+                <label style="display: block;">電子郵件<span style="padding-left: 5px; color: red;">*</span></label>
+                <input type="text" placeholder="電子郵件">
+            </div>
+            <div style="margin-bottom: 28px;">
+                <label style="display: block;">手機號碼<span style="padding-left: 5px; color: red;">*</span></label>
+                <input type="text" placeholder="您的手機號碼">
+            </div>
+            <div style="margin-bottom: 28px;">
+                <label style="display: block;">報名類型<span style="padding-left: 5px; color: red;">*</span></label>
+                <input type="radio" id="radio1" name="radio1" value="radio1">
+                <label for="radio1">躺在床上用想像力實作</label>
+                <br />
+                <input type="radio" id="radio2" name="radio2" value="radio2">
+                <label for="radio1">趴在地上滑手機找現成的</label>
+            </div>
+            <input type="submit" value="送出">
+        </form>
+    </div>
+</body>
+
+</html>
